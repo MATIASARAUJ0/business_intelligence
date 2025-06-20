@@ -1,0 +1,35 @@
+# Entorno virtual
+venv/
+ENV/
+env/
+.venv/
+
+# Carpetas generadas por dbt
+target/
+logs/
+
+# Archivos temporales de Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Archivos sensibles
+.user.yml
+
+# Archivos del sistema o del editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Archivos temporales o de prueba
+*.log
+*.tmp
+*.bak
+
+# Ignorar todos los .csv
+*.csv
+
+# Ignorar README si no quieres subirlo
+README.md

@@ -1,0 +1,25 @@
+name: 'sqlserver'
+version: '1.0'
+config-version: 2
+
+profile: 'costco_db_dwh'
+
+macro-paths: ["macros"]
+seed-paths: ["seeds"]
+
+seeds:
+  sqlserver:
+    +schema: RAW
+    +enabled: True
+
+models:
+  sqlserver:
+    RAW:
+      +schema: RAW
+      +materialized: table
+    STAGING:
+      +schema: STAGING
+      +materialized: table
+    MASTER:
+      +schema: MASTER
+      +materialized: table

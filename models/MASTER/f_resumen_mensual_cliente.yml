@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: f_resumen_mensual_cliente
+    description: "Tabla de hechos mensual que resume el comportamiento de compra de cada cliente por mes"
+    columns:
+      - name: sk_cliente
+        description: "Clave surrogate del cliente"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('d_cliente')
+              field: sk_cliente
+
+      - name: sk_mes
+        description: "Clave surrogate del mes"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('d_mes')
+              field: sk_mes
+
+      - name: sk_producto_mas_comprado
+        description: "Producto más comprado en ese mes por el cliente"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('d_producto')
+              field: sk_producto
+
+      - name: sk_categoria_producto_mas_comprado
+        description: "Categoría de producto más comprada"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('d_categoria_producto')
+              field: sk_categoria_producto
